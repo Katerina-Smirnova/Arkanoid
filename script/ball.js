@@ -1,7 +1,7 @@
 export class Ball {
     constructor() {
         this.x = 300;
-        this.y = 100;
+        this.y = 200;
         this.radius = 12;
         this.speed = 1;
         this.dx = 6;
@@ -27,7 +27,7 @@ export class Ball {
         }
         if (this.y > canvasHeight){
             this.x = 300;
-            this.y = 100;
+            this.y = 200;
         }
 
 
