@@ -4,14 +4,20 @@ export class Ball {
         this.y = 200;
         this.radius = 12;
         this.speed = 1;
-        this.dx = 6;
-        this.dy = 6;
+        this.dx = 4;
+        this.dy = 4;
     }
     draw(ctx) {
+        ctx.save();
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.shadowBlur = 10;
+        ctx.shadowOffsetX = 15;
+        ctx.shadowOffsetY = 20;
         ctx.fillStyle = 'red'
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();
+        ctx.restore();
     }
     update(canvasWidth, canvasHeight, paddleX, paddleY, paddleWidth, paddleHeight) {
         if (this.x + this.dx > canvasWidth - this.radius || this.x + this.dx < this.radius) {
@@ -29,11 +35,7 @@ export class Ball {
             this.x = 300;
             this.y = 200;
         }
-
-
         this.x += this.dx;
         this.y += this.dy
     }
-
-
 }

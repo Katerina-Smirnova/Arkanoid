@@ -14,8 +14,8 @@ body {
 
 canvas {
     display: block;
-    width: 800px;
-    height: 600px;
+    width: 880px;
+    height: 700px;
     /* background-color: red; */
     border: 2px solid #6146f7;
 }
