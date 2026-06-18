@@ -3,7 +3,7 @@ export class Brick {
         this.x = x;
         this.y = y;
         this.width = 80;
-        this.height = 20;
+        this.height = 25;
         // this.hp = hp;
         this.color = color;
     }

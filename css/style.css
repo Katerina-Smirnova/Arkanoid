@@ -4,6 +4,7 @@
     box-sizing: border-box;
     overflow: hidden;
 }
+
 body {
     height: 100dvh;
     display: flex;
@@ -12,10 +13,31 @@ body {
     /* background-color: black; */
 }
 
+.game {
+    position: relative;
+    max-width: 80vw;
+    /* max-height: 95vh; */
+}
+
 canvas {
     display: block;
     width: 880px;
     height: 700px;
     /* background-color: red; */
     border: 2px solid #6146f7;
+}
+
+.score {
+    position: absolute;
+    top: 10%;
+    left:82% ;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    /* color: white; */
+    text-shadow: 2px 2px 0px #000;
+    pointer-events: none;
+}
+
+.score div {
+    margin-bottom: 15px;
 }
