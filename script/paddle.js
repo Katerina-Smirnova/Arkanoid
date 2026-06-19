@@ -7,7 +7,6 @@ export class Paddle {
     }
     draw(ctx) {
         ctx.save();
-        // Тень для всей платформы
         ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
         ctx.shadowBlur = 10;
         ctx.shadowOffsetX = 15;
@@ -26,7 +25,7 @@ export class Paddle {
         ctx.rect(this.x + borderWidth,  this.y, this.width - borderWidth * 2, this.height);
         ctx.fill();
         ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-        ctx.fillRect(this.x + 2, this.y + 3, this.width - 5, 4);
+        ctx.fillRect(this.x + 2, this.y + 2, this.width - 5, 4);
         ctx.restore();
     }
     update(mouseX, canvasWidth){

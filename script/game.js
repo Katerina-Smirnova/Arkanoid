@@ -173,7 +173,6 @@ export class Game {
 
     }
     createLevel(levelMatrix) {
-        let hp = 1;
         for (let i = 0; i < levelMatrix.length; i++) {
             for (let j = 0; j < levelMatrix[i].length; j++) {
                 if (levelMatrix[i][j] > 0) {
