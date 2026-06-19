@@ -53,7 +53,7 @@ export class Game {
         this.bricks = [];
         this.message = null;
         this.messageColor = null;
-        this.createLevel(this.level, this.levels[this.level])
+        this.createLevel(this.levels[this.level])
         canvas.addEventListener('mousemove', (e) => {
             const rect = canvas.getBoundingClientRect();
             this.mouseX = e.clientX - rect.left;
@@ -93,7 +93,13 @@ export class Game {
         for (let i = this.bricks.length - 1; i >= 0; i--) {
             const brick = this.bricks[i];
             if (this.checkCollision(brick)) {
-                this.bricks.splice(i, 1);
+                if (brick.hp === 1) {
+                    this.bricks.splice(i, 1);
+                }
+                else {
+                    brick.hp -= 1
+                    brick.color = '#bec3ce'
+                }
                 this.ball.dy = -this.ball.dy;
                 this.brickHit = true;
                 this.score += 10;
@@ -118,7 +124,7 @@ export class Game {
             this.messageColor = '#ffd700';
             this.gameActive = false;
             setTimeout(() => {
-                if (this.level< 5) {
+                if (this.level < 5) {
                     this.level += 1;
                 } else {
                     this.level = 1;
@@ -149,7 +155,7 @@ export class Game {
         this.ctx.shadowOffsetY = 3;
 
         this.ctx.fillStyle = color;
-        this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2 );
+        this.ctx.fillText(text, this.canvas.width / 2, this.canvas.height / 2);
         this.ctx.restore();
     }
     restart() {
@@ -157,9 +163,8 @@ export class Game {
         this.score = 0;
         this.ball = new Ball();
         this.paddle = new Paddle();
-        console.log(this.ball.dy)
         this.bricks = [];
-        this.createLevel(this.level, this.levels[this.level])
+        this.createLevel(this.levels[this.level])
 
         setTimeout(() => {
             this.gameActive = true;
@@ -167,7 +172,7 @@ export class Game {
         }, 1000);
 
     }
-    createLevel(level, levelMatrix) {
+    createLevel(levelMatrix) {
         let hp = 1;
         for (let i = 0; i < levelMatrix.length; i++) {
             for (let j = 0; j < levelMatrix[i].length; j++) {

@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: black; */
+    background-color: black;
 }
 
 .game {
@@ -23,8 +23,13 @@ canvas {
     display: block;
     width: 880px;
     height: 700px;
-    /* background-color: red; */
-    border: 2px solid #6146f7;
+    border: 20px solid transparent;
+    background-image: url(./фон.png);
+    background-size: cover;
+    background-clip: padding-box;
+    border-image: url(./рамка.png)15 stretch;
+    border-image-slice: 15 15 0 15;
+    border-bottom: 20px solid #868e96;
 }
 
 .score {
@@ -33,7 +38,7 @@ canvas {
     left:82% ;
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
-    /* color: white; */
+    color: white;
     text-shadow: 2px 2px 0px #000;
     pointer-events: none;
 }

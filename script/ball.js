@@ -2,10 +2,10 @@ export class Ball {
     constructor() {
         this.x = 300;
         this.y = 200;
-        this.radius = 12;
+        this.radius = 7;
         this.speed = 1;
-        this.dx = 4;
-        this.dy = 4;
+        this.dx = 5;
+        this.dy = 5;
     }
     draw(ctx) {
         ctx.save();
@@ -13,7 +13,7 @@ export class Ball {
         ctx.shadowBlur = 10;
         ctx.shadowOffsetX = 15;
         ctx.shadowOffsetY = 20;
-        ctx.fillStyle = 'red'
+        ctx.fillStyle = 'white'
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();
